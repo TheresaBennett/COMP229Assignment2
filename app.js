@@ -1,3 +1,8 @@
+// File name: Express app portfolio
+// Student’s Name: Theresa Bennett
+// StudentID: 300909345
+// Date: June 4th 2023
+
 // installed 3rd party packages
 let createError = require('http-errors');
 let express = require('express');
