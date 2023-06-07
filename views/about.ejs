@@ -1,37 +1,92 @@
 
+
+    <%- include('partials/header') %> 
+    
+    
     <%- include('partials/main_nav.ejs') %>
-        <%- include('partials/header') %>
-           <div class="sm-width-wrapper">
+   
+         <!DOCTYPE html>
+<script src="about.js"></script>
+<section class="intro">
+    <div class="bg-image-vertical h-100" style="background-color: #EFD3E4;
+            background-image: url(https://images.unsplash.com/photo-1464618663641-bbdd760ae84a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80);
+          ">
+      <div class="mask d-flex align-items-center h-100">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-12 col-lg-10">
+              <div class="card" style="border-radius: 1rem;">
+                <div class="card-body p-5">
+  
+                  <h1 class="mb-5 text-center">About Me</h1>
+  
 
-                    <img class="img-fluid pt-4" src="/public/assets/images/me.jpg" alt=""
-                        width="420">
+                    <!-- 2 column grid layout with text inputs for the first and last names -->
+                           <div class="sm-width-wrapper">
 
 
-                    <h3 class="display-3">
-                        Theresa Bennett
-                    </h3>
-                    <div class="lead">
-                       <p>
-                            I am currently in my 4th year as a student at Centennial College School of Engineering Artificial Intelligence <br>
-                            currently studying to be a software engineer specializing in Web development.
-                            <br>
-
-                            <br> I am interested in creating websites and styling them .
-                            <br> My goal is to develop a comapny that specializes in <b>Web Decelopment.</b> <br>
-
-                            <br>I also plan to create my own interative social website
+    
+         
+                        <img  src="/assets/images/me.jpg" alt=""
+                        class="center" width="420" >
+                     <style>
+                        
+                        img {
+                            width:250px;
+                            height:250px;
+                            border-radius: 50%;
                             
-                        </p>
-                        <a target="_blank" href="/">
+                        }
+                        
+                     </style>
+                       
+<br>
+   My name is <b>Theresa Bennett</b>
+   <br>
+I'm from Toronto, Ontario. 
+<br>
+I am currently in my 4th year as a student at Centennial College School of Engineering Artificial Intelligence
+<br>
+currently studying to be a software engineer specializing in Web development.
+<br>
+                            
+                             <br><b> My goals upon finishing my studies are: </b>  
+                             <br>
+                            - Develop a comapny that specializes in Web Development
+                            <br> 
+                            - Create my ownn interactive website 
+
+                     </p>  </a>
+                   <a target="_blank"  a href="https://acrobat.adobe.com/id/urn:aaid:sc:US:e05cb484-771e-44be-9549-a64bc77ed693" >
                             <button class="btn btn-pill btn-dark p-3">
                                 View my resume
                             </button>
-                        </a>
-
+                      
+  
                     </div>
 
+             
+</html>
 
+            
+  
+                  
+                    
+  
+        
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</html>
+
+
+         
+   
 
                 <%- include('partials/bottom_nav') %>
 
