@@ -1,18 +1,34 @@
 
-    <%- include('partials/main_nav.ejs') %>
-        <%- include('partials/header') %>
-         
-         
-           <div class="sm-width-wrapper">
 
-        <section class="intro">
+    <%- include('partials/header') %> 
+    
+    
+    <%- include('partials/main_nav.ejs') %>
+   
+         <!DOCTYPE html>
+<script src="about.js"></script>
+<section class="intro">
     <div class="bg-image-vertical h-100" style="background-color: #EFD3E4;
             background-image: url(https://mdbootstrap.com/img/Photos/new-templates/search-box/img1.jpg);
           ">
+      <div class="mask d-flex align-items-center h-100">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-12 col-lg-10">
+              <div class="card" style="border-radius: 1rem;">
+                <div class="card-body p-5">
+  
+                  <h1 class="mb-5 text-center">About Me</h1>
+  
 
+                    <!-- 2 column grid layout with text inputs for the first and last names -->
+                           <div class="sm-width-wrapper">
+
+
+    
          
-                        <img class="img-fluid pt-4" src="/assets/images/me.jpg" alt=""
-                        width="420">
+                        <img  src="/assets/images/me.jpg" alt=""
+                        class="center" width="420" >
                      <style>
                         
                         img {
@@ -24,9 +40,9 @@
                         
                      </style>
                        
-
-   
 <br>
+   My name is <b>Theresa Bennett</b>
+   <br>
 I'm from Toronto, Ontario. 
 <br>
 I am currently in my 4th year as a student at Centennial College School of Engineering Artificial Intelligence
@@ -41,7 +57,7 @@ currently studying to be a software engineer specializing in Web development.
                             - Create my ownn interactive website 
 
                      </p>  </a>
-                   <a target="_blank" href="/">
+                   <a target="_blank" href="'Theresa.pdf';">
                             <button class="btn btn-pill btn-dark p-3">
                                 View my resume
                             </button>
@@ -52,7 +68,25 @@ currently studying to be a software engineer specializing in Web development.
              
 </html>
 
+            
+  
+                  
+                    
+  
+        
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</html>
 
+
+         
+   
 
                 <%- include('partials/bottom_nav') %>
 
