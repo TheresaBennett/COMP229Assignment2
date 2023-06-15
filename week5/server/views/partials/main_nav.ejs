@@ -51,6 +51,14 @@
         </li>
 
 
+         <% if (title == "Games"){ %>
+        <li class="nav-item active">
+        <% } else  { %>
+        <li class="nav-item">
+        <% } %>
+          <a class="nav-link" href="/game-list"> <i class="fa-solid fa-gamepad"  style="color: #fdb4e2;"></i>  Games</a>
+        </li>
+
          <% if (title == "Contact"){ %>
         <li class="nav-item active">
         <% } else  { %>
