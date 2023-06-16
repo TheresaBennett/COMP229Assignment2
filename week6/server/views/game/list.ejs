@@ -3,29 +3,24 @@
 
     <%- include('../partials/main_nav.ejs') %>
 
- 
- <!DOCTYPE html>
- <html lang="en">
- <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= title %></title>
-    <link rel='stylesheet' href="/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel='stylesheet' href="/@fortawesome/fortawesome-free/css/all.min.css" />
-    <link rel='stylesheet' href="/content/app.css" />
- </head>
- <body>
 
- 
- 
    <!-- Main Content -->
    <main class="container">
     <div class="row">
         <div class="offset-md-1 col-md-11">
             <h1><%= title %></h1>
+
+            <% if (typeof displayName == 'string' && displayName) { %>
             <a href="/game-list/add" class="btn btn-primary" role="button">
                 <i class="fas fa-plus-circle"></i> Add a Game</a>
+            <% } %>
+
+            
+
+             
+
             <br>
+            
             <table class="table table-bordered table-striped table-hover">
                 <!-- Header Row -->
                 <tr class="d-flex">
@@ -43,8 +38,7 @@
                         <th class="text-center col-1">Released</th>
                         <th class="col-6">Description</th>
                         <th class="text-center col-1">Price</th>
-                        <th class="text-center col-1"></th>
-                        <th class="text-center col-1"></th>
+                       
                     <% } %>
 
                     
@@ -72,14 +66,9 @@
                             <td class="text-center col-1"><%= GameList[count].released %></td>
                             <td class="col-6"><%= GameList[count].description %></td>
                             <td class="text-center col-1"><%= GameList[count].price %></td>
-                            <td class="text-center col-1">
+                          
 
-                            <a href="/game-list/edit/<%= GameList[count]._id %>"  class="btn btn-primary btn-sm">
-            <i class="fas fa-plus-pencil-alt" ></i>Edit </a></td>
-
-                            <td class="text-center col-1">
-                            <a href="/game-list/delete/<%= GameList[count]._id %>"  class="btn btn-danger btn-sm">
-            <i class="fas fa-trash-alt" ></i> Delete </a></td>
+                        
                         <% } %>
                     </tr>
                 <% } %>
