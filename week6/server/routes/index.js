@@ -1,3 +1,8 @@
+// File name: Express app portfolio
+// Student’s Name: Theresa Bennett
+// StudentID: 300909345
+// Date: June 18th, 2023
+
 var express = require('express');
 var router = express.Router();
 
@@ -19,7 +24,7 @@ router.get('/projects', indexController.displayProjectsPage);
 router.get('/services', indexController.displayServicesPage);
 
 /* GET contact page. */
-router.get('/contact', indexController.displayContactPage);
+router.get('/contactMe', indexController.displayContactPage);
 
 /* Get Route for displaying the Login Page */
 router.get('/login', indexController.displayLoginPage);

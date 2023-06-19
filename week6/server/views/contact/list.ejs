@@ -1,0 +1,97 @@
+ 
+  <%- include('../partials/header.ejs') %>
+
+    <%- include('../partials/main_nav.ejs') %>
+
+ 
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel='stylesheet' href="/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel='stylesheet' href="/@fortawesome/fortawesome-free/css/all.min.css" />
+    <link rel='stylesheet' href="/content/app.css" />
+ </head>
+ <body>
+<!-- Main Content -->
+
+   
+ <main class="container">
+    <div class="row">
+        <div class="center-md-1 col-md-12">
+            <h1><%= title %></h1>
+            <% if (typeof displayName == 'string' && displayName) {%>
+            <a href="/contact-list/add" class="btn btn-primary" role="button">
+                <i class="fas fa-plus-circle"></i> Add a Contact</a>
+            <%  } %>
+            <br> 
+        
+           
+             <!-- Header Row -->
+
+            <table class="table table-bordered table-striped table-hover">
+                <tr class="">
+                        <% if (typeof displayName == 'string' && displayName) {%>
+                        <th class="text-center col-3">Name</th>
+                        <th class="text-center col-3">Phone Number</th>
+                        <th class="text-center col-3">Email Address</th>
+                        <th class="text-center col-1"></th>
+                        <th class="text-center col-1"></th>
+                        
+
+                      <% } else { %>
+                        <th class="text-center col-3">Name</th>
+                  
+                       
+                    <% } %>
+                 
+
+                    
+                </tr>
+                <!-- Repeatable Template Row -->
+                <% for(let count = 0; count < ContactList.length; count++) { %>
+                    <tr class="">
+                        <% if (typeof displayName == 'string' && displayName) { %>
+                            <td class="text-center col-3"><%= ContactList[count].name %></td>
+                            <td class="text-center col-3"><%= ContactList[count].number %></td>
+                            <td class="text-center col-3"><%= ContactList[count].email %></td>
+                           
+                             <td class="text-center col-1">
+                    <a href="/contact-list/edit/<%= ContactList[count]._id %>"  class="btn btn-primary btn-sm">
+            <i class="fas fa-plus-pencil" ></i>Edit </a></td>
+            
+
+                            <td class="text-center col-1">
+                            <a href="/contact-list/delete/<%= ContactList[count]._id %>"  class="btn btn-danger btn-sm">
+            <i class="fas fa-trash-alt" ></i> Delete </a></td>
+
+                                                       
+<% } else { %>
+                        
+                            <td class="text-center col-3"><%= ContactList[count].name %></td>
+                       
+
+
+ 
+                    
+                        <% } %>
+                    </tr>
+                <% } %>
+            </table>
+          
+        </div>
+    </div>
+  </main>
+        <script src="/jquery/dist/jquery.min.js"></script>
+        <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="/Scripts/app.js"></script>
+    </div>
+ 
+</body>
+</html>
+
+<%- include('../partials/bottom_nav.ejs') %>
+
+                <%- include('../partials/footer.ejs') %>

@@ -1,3 +1,8 @@
+// File name: Express app portfolio
+// Student’s Name: Theresa Bennett
+// StudentID: 300909345
+// Date: June 18th, 2023
+
 let express = require('express');
 let router = express.Router();
 let mongoose = require('mongoose');
@@ -24,7 +29,7 @@ module.exports.displayServicesPage = (req, res, next) => {
 }
 
 module.exports.displayContactPage = (req, res, next) => {
-    res.render('contact', { title: 'Contact Us', displayName: req.user ? req.user.displayName : '' });
+    res.render('contactMe', { title: 'Contact Us', displayName: req.user ? req.user.displayName : '' });
 }
 
 module.exports.displayLoginPage = (req, res, next) => {
@@ -40,7 +45,7 @@ module.exports.displayLoginPage = (req, res, next) => {
     }
     else
     {
-        return res.redirect('/');
+        return res.redirect('/login');
     }
 }
 
@@ -55,7 +60,7 @@ module.exports.processLoginPage = (req, res, next) => {
         // is there a user login err?
         if(!user){
             req.flash('loginMessage', 'Authentication Error');
-            return res.redirect('/login');
+            return res.redirect('/');
         }
         req.login(user, (err) => {
             //server err?
@@ -63,7 +68,7 @@ module.exports.processLoginPage = (req, res, next) => {
             {
                 return next(err);
             }
-            return res.redirect('/game-list');
+            return res.redirect('/contact-list');
         });
     })(req, res, next);
 }
@@ -117,7 +122,7 @@ module.exports.processRegisterPage = (req, res, next) => {
         {
             //if registration is success
             return passport.authenticate('local')(req, res, () => {
-                res.redirect('/game-list')
+                res.redirect('/contact-list')
             });
         }
     });

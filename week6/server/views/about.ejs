@@ -4,7 +4,7 @@
     
     
     <%- include('partials/main_nav.ejs') %>
-   
+   <% if (typeof displayName == 'string' && displayName) { %>
          <!DOCTYPE html>
 <script src="about.js"></script>
 <section class="intro">
@@ -25,8 +25,8 @@
                            <div class="sm-width-wrapper">
 
 
-    
-         
+
+          
                         <img  src="/assets/images/me.jpg" alt=""
                         class="center" width="420" >
                      <style>
@@ -39,7 +39,7 @@
                         }
                         
                      </style>
-                       
+                    
 <br>
    My name is <b>Theresa Bennett</b>
    <br>
@@ -61,19 +61,84 @@ currently studying to be a software engineer specializing in Web development and
                             <button class="btn btn-pill btn-dark p-3">
                                 View my resume
                             </button>
-                      
+                       
+
+
+                           
   
                     </div>
 
              
 </html>
+<% } else { %>
 
-            
+   <div class="bg-image-vertical h-100" style="background-color: #EFD3E4;
+            background-image: url(https://images.unsplash.com/photo-1464618663641-bbdd760ae84a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80);
+          ">
+ <main class="container">
+    <!-- Message Area -->
+
+
+    <div class="row">
+        <div class="offset-md-4 col-md-4">
+            <h1>Please Login</h1>
+            <form method="POST" autocomplete="off">
+                <fieldset class="form-group">
+                    <label for="username">Username: </label>
+                    <input type="text" class="form-control"
+                    name="username" placeholder="Enter Username"
+                    id="username" required autofocus>
+                </fieldset>
+
+                <fieldset class="form-group">
+                    <label for="password">Password: </label>
+                    <input type="password" class="form-control"
+                    name="password" placeholder="Enter Password"
+                    id="password" required>
+                    or
+                    <a href="/register">Register Here</a>
+                </fieldset>
+
+                <fieldset class="form-group text-right">
+                    <input type="submit" class="btn btn-success" value="Login">
+                    <a href="/">
+                        <input type="button" class="btn btn-warning" value="Cancel">
+                    </a>
+                </fieldset>
+            </form>
+        </div>
+
+             <% } %>
   
                   
                     
-  
-        
+  <br>
+  <br>
+  <br>
+   <br>
+  <br>
+  <br>
+   <br>
+  <br>
+  <br>
+   <br>
+  <br>
+  <br>
+   <br>
+  <br>
+  <br>
+   <br>
+  <br>
+  <br>
+   <br>
+  <br>
+  <br>
+   <br>
+  <br>
+  <br>
+   <br>
+  <br>
+ 
                 </div>
               </div>
             </div>

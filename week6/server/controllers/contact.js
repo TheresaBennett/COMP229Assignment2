@@ -1,18 +1,23 @@
+// File name: Express app portfolio
+// Student’s Name: Theresa Bennett
+// StudentID: 300909345
+// Date: June 18th, 2023
+
 let express = require('express');
 let router = express.Router();
 let mongoose = require('mongoose');
 
-// connect to our Game Model
-let Game = require('../models/game');
+// connect to our Contact Model
+let Contact = require('../models/contact');
 
-module.exports.displayGameList = async (req, res, next)=>{
+module.exports.displayContactList = async (req, res, next)=>{
     try {
-        let gameList = await Game.find();
-        //console.log(gameList);
+        let contactList = await Contact.find();
+        //console.log(ContactList);
 
-        res.render('game/list', 
-            {title: 'Games', 
-            GameList: gameList,
+        res.render('contact/list', 
+            {title: 'Contact', 
+            ContactList: contactList,
             displayName: req.user ? req.user.displayName : ''})
     } catch (err){
         console.log(err);
@@ -21,8 +26,8 @@ module.exports.displayGameList = async (req, res, next)=>{
 
 module.exports.displayAddPage = async (req, res, next)=>{
     try {
-        res.render('game/add', 
-        {title: 'Add Game',
+        res.render('contact/add', 
+        {title: 'Add Contact',
         displayName: req.user ? req.user.displayName : ''})
     } catch (err){
         console.log(err);
@@ -30,17 +35,16 @@ module.exports.displayAddPage = async (req, res, next)=>{
 };
 
 module.exports.processAddPage = async (req, res, next) => {
-    let newGame = new Game({
+    let newContact = new Contact({
         "name": req.body.name,
-        "developer": req.body.developer,
-        "released": req.body.released,
-        "description": req.body.description,
-        "price": req.body.price
+        "number": req.body.number,
+        "email": req.body.email
+   
     });
 
     try {
-        await newGame.save();
-        res.redirect('/game-list')
+        await newContact.save();
+        res.redirect('/contact-list')
     } catch (err) {
         console.log(err);
         res.status(500).send(err);
@@ -51,10 +55,10 @@ module.exports.displayEditPage = async (req, res, next) => {
     let id = req.params.id;
 
     try {
-        let gameToEdit = await Game.findById(id);
-        res.render('game/edit', 
-        {title: 'Edit Game', 
-        game: gameToEdit,
+        let contactToEdit = await Contact.findById(id);
+        res.render('contact/edit', 
+        {title: 'Edit Contact', 
+        contact: contactToEdit,
         displayName: req.user ? req.user.displayName : ''});
     } catch (err){
         console.log(err);
@@ -65,17 +69,15 @@ module.exports.displayEditPage = async (req, res, next) => {
 module.exports.processEditPage = async (req, res, next) => {
     let id = req.params.id;
 
-    let updatedGame = {
+    let updatedContact = {
         "name": req.body.name,
-        "developer": req.body.developer,
-        "released": req.body.released,
-        "description": req.body.description,
-        "price": req.body.price
+        "number": req.body.number,
+        "email": req.body.email
     };
 
     try {
-        await Game.updateOne({_id: id}, updatedGame);
-        res.redirect('/game-list');
+        await Contact.updateOne({_id: id}, updatedContact);
+        res.redirect('/contact-list');
     } catch (err){
         console.log(err);
         res.status(500).send(err);
@@ -86,8 +88,8 @@ module.exports.performDelete = async (req, res, next) => {
     let id = req.params.id;
 
     try {
-        await Game.findByIdAndRemove(id);
-        res.redirect('/game-list');
+        await Contact.findByIdAndRemove(id);
+        res.redirect('/contact-list');
     }catch (err){
         console.log(err);
         res.status(500).send(err);
