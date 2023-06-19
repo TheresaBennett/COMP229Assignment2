@@ -1,15 +1,23 @@
-// File name: Express app portfolio
-// Student’s Name: Theresa Bennett
-// StudentID: 300909345
-// Date: June 4th 2023
-
+// IIFE
 
 (function(){
-   
-    function Start ()
+    function Start()
     {
-        console.log("App Started...");
-    }
-    window.addEventListener("Load", Start);
+        console.log("App Started...")
 
+        let deleteButtons = document.querySelectorAll('.btn-danger')
+
+        for ( button of deleteButtons)
+        {
+            button.addEventListener('click', (event) => {
+                if (!confirm("Are your sure?"))
+                {
+                    event.preventDefault();
+                    window.location.assign('/contact-list');
+                }
+            });
+        }
+    }
+
+    window.addEventListener("load", Start);
 })();

@@ -1,0 +1,134 @@
+ <%- include('partials/header.ejs') %>
+
+    <%- include('partials/main_nav.ejs') %>
+ <% if (typeof displayName == 'string' && displayName) { %>
+    <!DOCTYPE html>
+<script src="about.js"></script>
+<section class="intro">
+    <div class="bg-image-vertical h-100" style="background-color: #EFD3E4;
+            background-image: url(https://images.unsplash.com/photo-1464618663641-bbdd760ae84a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80);
+          ">
+      <div class="mask d-flex align-items-center h-100">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-12 col-lg-10">
+              <div class="card" style="border-radius: 1rem;">
+                <div class="card-body p-5">
+  
+
+
+                  <h1 class="mb-5 text-center">Services</h1>
+  
+
+                    <div class="container">
+                        
+
+                        <div class="">
+                            <div  i  class="fa-regular fa-file-code">
+                                <h4></h4>
+                              </div>
+                              <p>HTML · CSS · JavaScript <br>
+                              (Websites · Webapps · )</p>
+
+                              <div class="">
+                             <div i class="fa-solid fa-spray-can">
+                                    <h4></h4>
+                                  </div>
+                                  <p>Photoshop ·  Visual Paradigm <br>
+                                  (Design)</p>
+
+                                  <div class="">
+                                   <div i class="fa-brands fa-microsoft">
+                                        <h4> </h4>
+                                      </div>
+                                      <p>MS Office <br>
+                                      (Communication · Task Managemet )</p>
+<br>
+                         
+
+                          
+                       
+
+                    </div>
+                </div>
+                     
+                      
+  
+                    </div>
+
+
+             
+</html>
+<% } else { %>
+
+   <div class="bg-image-vertical h-100" style="background-color: #EFD3E4;
+            background-image: url(https://images.unsplash.com/photo-1464618663641-bbdd760ae84a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80);
+          ">
+ <main class="container">
+    <!-- Message Area -->
+
+
+    <div class="row">
+        <div class="offset-md-4 col-md-4">
+            <h1>Please Login</h1>
+            <form method="POST" autocomplete="off">
+                <fieldset class="form-group">
+                    <label for="username">Username: </label>
+                    <input type="text" class="form-control"
+                    name="username" placeholder="Enter Username"
+                    id="username" required autofocus>
+                </fieldset>
+
+                <fieldset class="form-group">
+                    <label for="password">Password: </label>
+                    <input type="password" class="form-control"
+                    name="password" placeholder="Enter Password"
+                    id="password" required>
+                    or
+                    <a href="/register">Register Here</a>
+                </fieldset>
+
+                <fieldset class="form-group text-right">
+                    <input type="submit" class="btn btn-success" value="Login">
+                    <a href="/">
+                        <input type="button" class="btn btn-warning" value="Cancel">
+                    </a>
+                </fieldset>
+            </form>
+        </div>
+
+             <% } %>
+  
+                  
+                    
+  <br>
+  <br>
+  <br>
+   <br>
+  <br>
+  <br>
+   <br>
+  <br>
+  <br>
+   <br>
+  <br>
+  <br>
+   <br>
+  <br>
+  <br>
+   <br>
+  <br>
+  <br>
+   <br>
+  <br>
+  <br>
+   <br>
+  <br>
+  <br>
+   <br>
+  <br>
+ 
+ 
+<%- include('partials/bottom_nav.ejs') %>
+
+                <%- include('partials/footer.ejs') %>
