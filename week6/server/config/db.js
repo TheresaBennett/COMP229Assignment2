@@ -5,5 +5,5 @@
 
 module.exports = 
 {
-    "URI": "mongodb://localhost/contact_list"
+    "URI": "mongodb+srv://Tbennett2:IUouioZiI2qR1Rq3@mongodbserver2.magwtoj.mongodb.net/contact_list?retryWrites=true&w=majority"
 }
