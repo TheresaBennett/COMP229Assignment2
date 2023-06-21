@@ -40,6 +40,7 @@ let app = express();
 app.set('views', path.join(__dirname, '../views'));
 app.set('view engine', 'ejs');
 
+//use methods
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -61,7 +62,7 @@ app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
 
-// passport user configuration
+
 
 
 // create a User Model Instance
